@@ -17,7 +17,7 @@
     <meta charset="UTF-8">
     
     <!--MODIFY your web page title -->
-    <title>Fusion Tables Layer Example: Legend</title>
+    <title>LEGEND TEST</title>
 
     <script type="text/javascript"
         src="http://maps.google.com/maps/api/js?sensor=false"></script>
@@ -65,7 +65,7 @@
       function initialize() {
         // MODIFY the map center point, zoom level, and type if desired
         var map = new google.maps.Map(document.getElementById('map-canvas'), {
-          center: new google.maps.LatLng(37.4, -90.1),
+          center: new google.maps.LatLng(37.4, 45),
           zoom: 4,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         });
@@ -76,12 +76,12 @@
         var layer = new google.maps.FusionTablesLayer({
           map: map,
           query: {
-            select: 'Address',
-            from: '1RXgs33--EUO1ARJsNr0VQwju9TyebQpkuBlbxmlF',
+            select: 'Latitude',
+            from: 'https://github.com/ISAW-Library/FusionTable-Map-custom-legend',
           },
           options:{
-            styleId: 5,
-            templateId: 6
+            styleId: 2,
+            templateId: 2
           }
         });
         // MODIFY Title and text of your legend. Match color names and labels to the Google Fusion Table map marker icons you already created.
@@ -89,12 +89,12 @@
         var legend = document.createElement('div');
         legend.id = 'legend';
         var content = [];
-        content.push('<h3>Company</h3>');
-        content.push('<p><div class="color green"></div>The Fresh Market</p>');
-        content.push('<p><div class="color blue"></div>Whole Foods Market</p>');
-        content.push('<p><div class="color yellow"></div>Sprouts Farmers Market</p>');
-        content.push('<p>*Only US locations</p>');
-        content.push('<p><a href="https://www.google.com/fusiontables/DataSource?docid=1RXgs33--EUO1ARJsNr0VQwju9TyebQpkuBlbxmlF">Source Data</a>');
+        content.push('<h3>Precision</h3>');
+        content.push('<p><div class="Site"></div>Site</p>');
+        content.push('<p><div class="City"></div>City</p>');
+        content.push('<p><div class="Region"></div>Region</p>');
+        content.push('<p><div class="Broad region"></div>Broad Region</p>');
+        content.push('<p><a href="https://www.google.com/fusiontables/DataSource?docid=1cv9aK804IPXK0uJoxIkCFYT4UeDHTHK_GXiBC3Kc">Source Data</a>');
         legend.innerHTML = content.join('');
         legend.index = 1;
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
